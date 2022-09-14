@@ -4,6 +4,7 @@ resource "aws_instance" "web_server" {
   vpc_security_group_ids = [aws_security_group.web_sg.id]
   key_name = "talent-academy-lab"
   subnet_id = data.aws_subnet.public.id
+  associate_public_ip_address = true
 
   tags = {
     Name = "Webserver"
